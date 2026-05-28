@@ -9,7 +9,7 @@ Integration team actually ships: it ingests operational data through a validated
 **self-service dashboards and reports**, lets analysts **write SQL** against a live
 warehouse, and answers plain-English questions with an **AI agent** that writes and
 runs SQL for you.
-
+**Live demo:** [gridlens-eight-vercel.app](https://gridlens-eight.vercel.app/api-explorer)
 
 
 ## Architecture
