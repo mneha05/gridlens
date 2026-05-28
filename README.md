@@ -10,35 +10,7 @@ Integration team actually ships: it ingests operational data through a validated
 warehouse, and answers plain-English questions with an **AI agent** that writes and
 runs SQL for you.
 
-It deploys to Vercel in ~2 minutes and **works for anyone with zero configuration**.
 
----
-
-## Why this maps to the role
-
-This project was built deliberately against the Enterprise BI & Integration intern
-posting. Every required and desired skill has a working surface in the app:
-
-| What the posting asks for | Where it lives in GridLens |
-|---|---|
-| Data analytics & reporting solutions | **Operations dashboard** — live KPIs, trends, source mix |
-| Create/edit reports & visualizations (Power BI / Tableau class) | **Dashboard + AI Analyst** — interactive charts, drill-downs |
-| Self-service analytics | **SQL Workbench** — analysts query the warehouse directly |
-| SQL & query languages | Real **SQLite** engine (sql.js/WASM) running joins, CTEs, aggregates |
-| Databases | Modeled star-ish schema: `facilities`, `generation`, `regions`, `incidents` |
-| Data & data pipelines, ETL | **`etl/build_dataset.py`** — Extract → Transform → Load with quality contracts |
-| Full life-cycle API management | **Versioned `/api/v1` REST API** + interactive API Console |
-| AI and AI agents | **AI Analyst** — natural language → generated SQL → executed → visualized |
-| Python | The entire ETL pipeline |
-| HTML / CSS | The whole front end (Next.js / React / CSS) |
-| Version control | Git + GitHub (this repo) |
-| Agile (SCRUM/Kanban) | Built in iterative slices; see commit history / issues |
-
-> Power BI, Tableau, Oracle, SQL Server, C#, .NET, Java and PowerShell are listed as
-> *desired*. GridLens demonstrates the same competencies (BI dashboards, SQL,
-> ETL, APIs) in a stack that deploys publicly so a reviewer can click into it live.
-
----
 
 ## Architecture
 
@@ -95,28 +67,8 @@ Console all work with no keys.
 
 ---
 
-## Deploy to Vercel
 
-1. Push this repo to GitHub.
-2. On [vercel.com](https://vercel.com) → **Add New Project** → import the repo →
-   **Deploy**. No settings needed; Vercel auto-detects Next.js.
-3. Done. The whole BI platform is live.
 
-### (Optional) Turn on the AI Analyst
-
-The AI Analyst is the only feature that needs a key — and it fails gracefully without
-one (it shows a friendly "dormant" message instead of erroring). To enable it:
-
-1. Get a key at **console.anthropic.com**.
-2. In Vercel → your project → **Settings → Environment Variables**, add:
-   - `ANTHROPIC_API_KEY` = `sk-ant-…`
-   - *(optional)* `CLAUDE_MODEL` = `claude-sonnet-4-6`
-3. **Redeploy.** The AI Analyst tab is now live.
-
-> **Security note:** the key is read server-side from `process.env` only — it is never
-> shipped to the browser and never committed to the repo. That's why there's an
-> `.env.example` and not a real key in source. This is the correct pattern; a key
-> hardcoded into a public repo would be auto-revoked and is a real security risk.
 
 ---
 
