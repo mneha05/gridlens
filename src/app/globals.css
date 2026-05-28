@@ -1,0 +1,67 @@
+:root {
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #070a10;
+  color: #c9d4e3;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* faint instrument-panel grid + vignette */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(63, 208, 212, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(63, 208, 212, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% -10%, rgba(255, 176, 0, 0.06), transparent 55%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+  mask-image: radial-gradient(circle at 50% 40%, black 60%, transparent 100%);
+}
+
+::selection { background: rgba(255, 176, 0, 0.3); color: #fff; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0e131c; }
+::-webkit-scrollbar-thumb { background: #1e2735; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #2a3650; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
+}
+.live-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+@keyframes sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+.scanning::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,176,0,0.12), transparent);
+  animation: sweep 1.2s linear infinite;
+}
+
+.tnum { font-variant-numeric: tabular-nums; }

@@ -1,0 +1,7 @@
+region_id,name,grid_operator
+1,Desert Southwest,WECC
+2,Pacific Northwest,WECC
+3,Texas Interconnect,ERCOT
+4,Upper Midwest,MISO
+5,Mid-Atlantic,PJM
+6,New England,ISO-NE

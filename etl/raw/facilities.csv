@@ -1,0 +1,16 @@
+facility_id,name,region_id,type,capacity_mw,commissioned_year,lat,lon
+1,Mesa Verde Solar Array,1,Solar,650,2019,32.22,-110.97
+2,Sonoran Photovoltaic,1,Solar,480,2021,33.45,-112.07
+3,Coronado Wind Farm,1,Wind,310,2017,31.96,-110.3
+4,Cascade Hydro Station,2,Hydro,900,1998,47.61,-122.33
+5,Columbia Wind Ridge,2,Wind,540,2015,45.63,-121.18
+6,Rainier Geothermal,2,Geothermal,220,2020,46.85,-121.76
+7,Lone Star Wind Corridor,3,Wind,820,2016,32.78,-96.8
+8,Permian Solar Fields,3,Solar,710,2022,31.99,-102.08
+9,Gulf Coast Gas Peaker,3,Gas,400,2012,29.76,-95.37
+10,Great Lakes Wind,4,Wind,460,2018,44.97,-93.27
+11,Prairie Solar Commons,4,Solar,330,2023,43.07,-89.4
+12,Susquehanna Nuclear Unit,5,Nuclear,1100,1985,40.21,-76.14
+13,Keystone Wind Plateau,5,Wind,380,2019,40.44,-79.99
+14,Bay State Offshore Wind,6,Wind,600,2024,41.49,-70.55
+15,Charles River Solar,6,Solar,190,2021,42.36,-71.06
